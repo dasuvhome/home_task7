@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -10,20 +11,19 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="300.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="300.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <Label alignment="CENTER" layoutX="-1.0" prefHeight="80.0" prefWidth="300.0" style="-fx-background-color: #1b1a1a; colo: bold;" text="Конвертер" textFill="#e4dede" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <font>
             <Font name="Bell MT Bold" size="35.0" />
          </font>
       </Label>
-      <TextField id="t" fx:id="textField" layoutX="76.0" layoutY="102.0" prefHeight="40.0" promptText="Ввод единиц" style="-fx-background-color: gray; -fx-border-color: black; -fx-border-radius: 10;" text="0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
+      <TextField id="t" fx:id="enterTextField" layoutX="76.0" layoutY="102.0" prefHeight="40.0" promptText="Ввод единиц" style="-fx-background-color: gray; -fx-border-color: black; -fx-border-radius: 10;" text="0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="100.0">
          <font>
             <Font name="Berlin Sans FB" size="17.0" />
          </font>
       </TextField>
-      <ChoiceBox layoutX="63.0" layoutY="175.0" prefHeight="30.0" prefWidth="150.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="170.0" />
+      <ChoiceBox fx:id="unitChoiceBox" layoutX="63.0" layoutY="175.0" prefHeight="30.0" prefWidth="150.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="170.0" />
       <GridPane layoutY="-5.0" prefHeight="95.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="250.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -46,7 +46,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label prefWidth="270.0" text="0.00" GridPane.rowIndex="1">
+            <Label fx:id="tonUnitsLabel" prefWidth="270.0" text="0.00" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
@@ -62,7 +62,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label prefWidth="270.0" text="0.000" GridPane.rowIndex="3">
+            <Label fx:id="kiloUnitsLabel" prefWidth="270.0" text="0.000" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
@@ -78,7 +78,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label prefWidth="270.0" text="0.000" GridPane.rowIndex="5">
+            <Label fx:id="grammUnitsLabel" prefWidth="270.0" text="0.000" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
@@ -88,5 +88,6 @@
             </Label>
          </children>
       </GridPane>
+      <Button fx:id="btn_go" layoutX="240.0" layoutY="173.0" mnemonicParsing="false" text="GO" />
    </children>
 </AnchorPane>
